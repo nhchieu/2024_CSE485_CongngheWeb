@@ -11,4 +11,8 @@ Islands", "Brunei",
 "Bulgaria", "Burkina Faso", "Burundi", "Vietnam"
 );
 // You can use the $countries array in your PHP code as needed.
+
+foreach ($countries as $country){
+    echo "<li>$country</li>";
+}
 ?>
