@@ -23,4 +23,4 @@ $navItem = [
 </nav>
 
 <?php
-echo "Hello World!";
+echo "hello";
