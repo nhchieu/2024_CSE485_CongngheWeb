@@ -32,7 +32,7 @@ quốc tế.',
 'fee' => '15.000.000 VND','start_date' => '2/2/24',
 'duration' => '2 - 2.5 năm'
 ],
-// Thêm các khóa học khác vào đây
+
 ];
 // Hiển thị danh sách khóa học
 foreach ($courses as $course) {
