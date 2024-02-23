@@ -11,7 +11,7 @@ include("header.php");
 $courses = [
     [
         'img' => 'https://aptech.vn/wp-content/uploads/2023/08/banner-1920x750_ITT.png.webp',
-        'title' => 'Học viên quốc tế',
+        'title' => 'HỌC VIÊN QUỐC TẾ',
         'description' => 'Chương trình đào tạo chính thức tại Việt Nam từ Aptech Global. Phát triển nghề nghiệp sinh viên IT như một lập trình viên quốc tế.',
         'fee' => '15.000.000 VND',
         'start_date' => '2/2/24',
@@ -60,8 +60,10 @@ $courses = [
 ];
 ?>
 
+<div class="container">
+<div class="row">
 <?php foreach ($courses as $course): ?>
-    <div class="course">
+    <div class="course col-md-4 col-sm-6">
         <div class="course-img">
             <img src="<?= $course['img']; ?>" alt="">
         </div>
@@ -85,6 +87,8 @@ $courses = [
     </div>
 
 <?php endforeach; ?>
+</div>
+</div>
 </body>
 
 </html>
