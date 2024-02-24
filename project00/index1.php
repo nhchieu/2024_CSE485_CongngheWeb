@@ -1,5 +1,5 @@
 <?php
-sesssion_start(); // dich vu bao ve
+session_start(); // dich vu bao ve
 if (!$_SESSION['isLogin']) {
     header("Location:login.php");
 }
