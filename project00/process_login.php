@@ -7,6 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user == 'haianh' && $pass == '123') { //thu cccd
         session_start();
         $_SESSION['isLogin'] = $user; //cap the
-        header('Location:project00/index1.php'); //chuyen huong mac dinh
+        header('Location:index1.php'); //chuyen huong mac dinh
     }
 }
