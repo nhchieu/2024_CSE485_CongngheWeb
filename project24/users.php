@@ -10,7 +10,7 @@
         [
         "username" => "abcd",
         "password" => password_hash("abc", PASSWORD_DEFAULT),
-        "name" => "Jane Doe",
+        "name" => "Bố",
         "email" => "janedoe@example.com",
         "role" => "admin"
         ],

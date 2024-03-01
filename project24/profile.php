@@ -1,5 +1,6 @@
 <?php
 require_once 'users.php';
+include 'header.php';
 session_start();
 
 if(!isset($_SESSION['user_id']) || !isset($_COOKIE['logged_in'])){
@@ -20,7 +21,7 @@ if($user){
     $user_role=$_SESSION['user_role'];
 
 }
-echo "welcome,".$user['name']."!";
+echo "<h3>welcome,".$user['name']."!</h3>";
 echo "<br>email: ".$user['email']."!";
 
 if($user_role=="user"){   

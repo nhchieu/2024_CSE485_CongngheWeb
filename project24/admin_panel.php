@@ -1,5 +1,6 @@
 <?php
 require_once 'users.php';
+include 'header.php';
     session_start();
     if(!isset($_SESSION['user_id']) ||!isset($_COOKIE['logged_in']) || $_SESSION['user_role']!== 'admin'){
         header("location:login.php");
@@ -32,4 +33,8 @@ require_once 'users.php';
     <?php endforeach;?>
     
 </table>
+
+<form action="logout.php">
+    <button type="submit" class="btn bg-primary">logout</button>
+</form>
 
