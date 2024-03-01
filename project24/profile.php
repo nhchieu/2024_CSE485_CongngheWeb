@@ -21,15 +21,13 @@ if($user){
 
 }
 echo "welcome,".$user['name']."!";
-echo "email: ".$user['email']."!";
+echo "<br>email: ".$user['email']."!";
 
-if($authorization_levels[$user_role]['edit_profile_basic']){
-    echo "<br>Edit basic profile information :<a href=edit_profile_basic.php>edit</a>";
+if($user_role=="user"){   
+    echo "<br>Edit basic profile information :<a href=edit_profile_basic.php>link</a>";
 }
 if($user_role==="admin" && $authorization_levels[$user_role]["access_admin_panel"]){
-    echo "<br><a href='admin_panel.php'>admin panel</a>'";
+    echo "<br><a href='admin_panel.php'>admin panel</a>";
 }
-else{
-    echo "user not found";
-}
+
 ?>

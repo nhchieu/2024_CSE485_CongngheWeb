@@ -1,6 +1,6 @@
 <?php
 require_once 'users.php';
-    session_abort();
+    session_start();
 
     if(!isset($_SESSION['user_id']) ||!isset($_COOKIE['logged_in']) || $_SESSION['user_role']!== 'admin'){
         header("location:login.php");
