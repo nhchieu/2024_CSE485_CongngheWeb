@@ -10,4 +10,4 @@
     <input type="file" name="avatar" accept="image/*">
     <br>
     <button type="submit">Update Profile</button>
-   </form>
+</form>
