@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors[] = "File size must be less than 1MB.";
         } else {
             $fileName = uniqid() . "." . $fileInfo['extension'];
-            $targetFile = $targetDir . basename($_FILES['avatar']['name']);
+            $targetFile = $targetDir . $fileName;
             if (move_uploaded_file($_FILES['avatar']['tmp_name'], $targetFile)) {
                 $user['avatar'] = $targetFile; 
             } else {
