@@ -1,5 +1,5 @@
 <?php
-require_once root . 'config/database.php';
+require_once ROOT . '/config/database.php';
 
 
 class DepartmentService
@@ -22,7 +22,8 @@ class DepartmentService
 
         return $department;
     }
-    public function getDepartmentById($id) {
+    public function getDepartmentById($id)
+    {
         $conn = connectDB();
         $sql = "SELECT * from departments where DepartmenId = $id";
         //b3:thực hiện câu sql
@@ -38,31 +39,45 @@ class DepartmentService
         mysqli_close($conn);
         return $department;
     }
-    public function addDepartment($id,$name,$address,$email,$phone,$logo,$website,$DepartmentParentId) {
+    public function addDepartment($id, $name, $address, $email, $phone, $logo, $website, $DepartmentParentId)
+    {
         $conn = connectDB();
-        try{
-        $sql = "INSERT INTO departments VALUES('$id','$name','$address','$email','$phone','$logo','$website','$DepartmentParentId')";
-        //b3:thực hiện câu sql
-        mysqli_query($conn, $sql);
-        return true;
-        }
-        catch(Exception $e){
+        try {
+            $sql = "INSERT INTO departments VALUES('$id','$name','$address','$email','$phone','$logo','$website','$DepartmentParentId')";
+            //b3:thực hiện câu sql
+            $conn->exec($sql);
+            return true;
+        } catch (Exception $e) {
             return false;
         }
         mysqli_close($conn);
     }
-    public function updateDepartment($id,$name,$address,$email,$phone,$logo,$website,$DepartmentParentId) {
+    public function updateDepartment($id, $name, $address, $email, $phone, $logo, $website, $DepartmentParentId)
+    {
         $conn = connectDB();
-        $sql = "UPDATE departments SET (DepartmentName = '$name', Address = '$address', Email = '$email', Phone = '$phone', Logo = '$logo', Website = '$website', DepartmentParentId = '$DepartmentParentId' WHERE DepartmentId = $id)";
-        //b3:thực hiện câu sql
-        mysqli_query($conn, $sql);
+        try {
+            $sql = "UPDATE departments SET (DepartmentName = '$name', Address = '$address', Email = '$email', Phone = '$phone', Logo = '$logo', Website = '$website', DepartmentParentId = '$DepartmentParentId' WHERE DepartmentId = $id)";
+            //b3:thực hiện câu sql
+            $conn->exec($sql);
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+
         mysqli_close($conn);
     }
-    public function deleteDepartment($id) {
+    public function deleteDepartment($id)
+    {
         $conn = connectDB();
-        $sql = "DELETE FROM departments WHERE DepartmentId = $id";
-        //b3:thực hiện câu sql
-        mysqli_query($conn, $sql);
+        try {
+            $sql = "DELETE FROM departments WHERE DepartmentId = $id";
+            //b3:thực hiện câu sql
+            $conn->exec($sql);
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+
         mysqli_close($conn);
     }
 

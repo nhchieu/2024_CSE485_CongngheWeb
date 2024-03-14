@@ -35,7 +35,7 @@ class EmployeeService
         $conn = connectDB();
         try {
             $sql = "INSERT INTO employees VALUES('$id','$name','$email','$address','$phone','$position','$avatar','$departmentId')";
-            mysqli_query($conn, $sql);
+            $conn->exec($sql);
             return true;
         } catch (Exception $e) {
             return false;
@@ -47,9 +47,9 @@ class EmployeeService
     {
         $conn = connectDB();
         try {
-        $sql = "UPDATE employees SET Fullname='$name',Email='$email',Address='$address',Phone='$phone',Position='$position',Avatar='$avatar',DepartmentId='$departmentId' WHERE EmployeeId='$id'";
-        mysqli_query($conn, $sql);
-        return true;
+            $sql = "UPDATE employees SET Fullname='$name',Email='$email',Address='$address',Phone='$phone',Position='$position',Avatar='$avatar',DepartmentId='$departmentId' WHERE EmployeeId='$id'";
+            $conn->exec($sql);
+            return true;
         } catch (Exception $e) {
             return false;
         }
@@ -59,10 +59,10 @@ class EmployeeService
     {
         $conn = connectDB();
         try {
-        $sql = "DELETE FROM employees WHERE EmployeeId='$id'";
-        mysqli_query($conn, $sql);
-        return true;}
-        catch (Exception $e) {
+            $sql = "DELETE FROM employees WHERE EmployeeId='$id'";
+            $conn->exec($sql);
+            return true;
+        } catch (Exception $e) {
             return false;
         }
         mysqli_close($conn);
