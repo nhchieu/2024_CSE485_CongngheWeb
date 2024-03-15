@@ -1,5 +1,5 @@
 <?php
-require_once root . 'config/database.php';
+require_once ROOT . 'config/database.php';
 class EmployeeService
 {
     public function getAllEmployees()
@@ -30,19 +30,7 @@ class EmployeeService
         mysqli_close($conn);
         return $employees;
     }
-    public function addEmployee($id, $name, $email, $address, $phone, $position, $avatar, $departmentId)
-    {
-        $conn = connectDB();
-        try {
-            $sql = "INSERT INTO employees VALUES('$id','$name','$email','$address','$phone','$position','$avatar','$departmentId')";
-            $conn->exec($sql);
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-
-        mysqli_close($conn);
-    }
+    
     public function updateEmployee($id, $name, $email, $address, $phone, $position, $avatar, $departmentId)
     {
         $conn = connectDB();

@@ -1,4 +1,4 @@
-<h1>Home Page</h1>
+
 <?php
 
 require_once ROOT.'/service/DepartmentService.php';

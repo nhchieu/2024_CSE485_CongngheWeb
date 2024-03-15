@@ -1,6 +1,5 @@
 <?php
-require_once root . '/services/EmployeeService.php';
-require_once root . '/services/EmployeeService.php';
+require_once ROOT . '/services/EmployeeService.php';
 
 class EmployeeController
 {
